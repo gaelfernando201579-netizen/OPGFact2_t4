@@ -41,90 +41,48 @@ Este proyecto corresponde a la **Actividad 2 (`OPGFact2_t4`)**, construida sobre
 ## 3. Evidencias y Capturas de Pantalla
 
 ### 3.1. Vista con el listado de elementos (`Model`, `th:each` y `@Value`)
-- **Endpoint:** `GET http://localhost:8087/vistas/materias`
-- **Descripción:** Muestra la propiedad `config.semestre` leída desde `application.properties` con `@Value("${config.semestre}")` y recorre la lista de `MateriaDTO` utilizando la directiva `th:each`, aplicando un operador ternario cuando la materia no tiene profesor asignado (`'Sin asignar'`).
+- **Endpoint:** `GET http://143.198.182.173:8087/vistas/materias`
+- **Descripción:** Muestra la propiedad `config.semestre` leída desde `application.properties` con `@Value("${config.semestre}")` y recorre la lista de `MateriaDTO` utilizando la directiva `th:each`, aplicando un operador ternario cuando la materia no tiene profesor asignado (`'Sin asignar'`), se logran apreciar unas inserciones raras, las cuales son resultados de las pruebas con POSTMAN.
 
-> **[ESPACIO PARA CAPTURA 1: Listado de materias (`th:each` y `@Value`)]**  
-> Reemplaza la línea de abajo arrastrando tu captura en GitHub o colocando la ruta de tu imagen:
-```markdown
-![Vista listado con th:each](ruta/a/tu/captura_lista.png)
-```
+![Vista listado navegador](/OPGFact2_t4/Capturas/MateriasVPS.png)
 
 ---
 
 ### 3.2. Formulario con `@ModelAttribute`
 - **Endpoints:**
-  - `GET http://localhost:8087/vistas/formulario` (muestra el formulario vacío)
-  - `POST http://localhost:8087/vistas/guardar` (recibe los datos con `@ModelAttribute MateriaDTO` y los agrega a la lista)
+  - `GET http://143.198.182.173:8087/vistas/formulario` (muestra el formulario vacío)
+  - `POST http://143.198.182.173:8087/vistas/guardar` (recibe los datos con `@ModelAttribute MateriaDTO` y los agrega a la lista)
 - **Descripción:** Captura el nombre de la materia y el profesor desde el formulario HTML, los procesa con `@ModelAttribute`, muestra el mensaje de confirmación en `exito.html` y agrega el registro a la tabla de materias.
 
-> **[ESPACIO PARA CAPTURA 2A: Vista del formulario (`/vistas/formulario`)]**  
-> Reemplaza la línea de abajo con tu captura del formulario lleno antes de enviarlo:
-```markdown
-![Vista formulario con @ModelAttribute](ruta/a/tu/captura_formulario.png)
-```
-
-> **[ESPACIO PARA CAPTURA 2B: Resultado al guardar (`/vistas/guardar`)]**  
-> Reemplaza la línea de abajo con tu captura del mensaje de éxito o la lista actualizada:
-```markdown
-![Resultado del formulario procesado](ruta/a/tu/captura_exito.png)
-```
+![Vista formulario con @ModelAttribute](/OPGFact2_t4/Capturas/VistaPostExito.png)
+![Resultado del formulario procesado](/OPGFact2_t4/Capturas/VistaVacia.png)
 
 ---
 
 ### 3.3. Endpoint con `@RequestParam`
-- **Endpoint:** `GET http://localhost:8087/vistas/buscar?q=Simulacion`
+- **Endpoint:** `GET http://143.198.182.173:8087/vistas/buscar?q=Simulacion`
 - **Descripción:** Recibe el parámetro de consulta `q` en la URL mediante `@RequestParam(name = "q", required = false)` y lo renderiza en la vista `busqueda.html`.
-
-> **[ESPACIO PARA CAPTURA 3: Endpoint con `@RequestParam` (`/vistas/buscar?q=...`)]**  
-> Reemplaza la línea de abajo con tu captura en el navegador mostrando la URL con `?q=...` y el resultado:
-```markdown
-![Resultado de @RequestParam](ruta/a/tu/captura_requestparam.png)
-```
+![Vista listado navegador](/OPGFact2_t4/Capturas/VistaMaterias.png)
 
 ---
 
 ### 3.4. Endpoint con `@PathVariable`
-- **Endpoint:** `GET http://localhost:8087/vistas/materias/1`
+- **Endpoint:** `GET http://143.198.182.173:8087/vistas/materias/1`
 - **Descripción:** Extrae el identificador `{id}` directamente de la ruta usando `@PathVariable Long id` y lo muestra en la vista `detalle.html`.
-
-> **[ESPACIO PARA CAPTURA 4: Endpoint con `@PathVariable` (`/vistas/materias/1`)]**  
-> Reemplaza la línea de abajo con tu captura en el navegador mostrando la URL `/vistas/materias/1` y el detalle:
-```markdown
-![Resultado de @PathVariable](ruta/a/tu/captura_pathvariable.png)
-```
 
 ---
 
 ### 3.5. Petición `POST` REST probada en Postman / Bruno (`@RequestBody` con DTO)
-- **Endpoint:** `POST http://localhost:8087/api/materias/solicitud`
+- **Endpoint:** `POST http://143.198.182.173:8087/api/materias/solicitud`
 - **Body (JSON) enviado:**
   ```json
   {
     "nombre": "Programación Web",
     "profesor": "Omar Robledo Cabrera"
   }
-  ```
-- **Descripción:** El controlador `MateriaRestController` recibe el cuerpo JSON mediante `@RequestBody MateriaDTO` y devuelve el objeto deserializado en formato JSON con código de estado `200 OK`.
+- **Descripción:** El controlador `MateriaRestController` recibe el cuerpo JSON mediante `@RequestBody` MateriaDTO y devuelve el objeto deserializado en formato JSON con código de estado `200 OK`.
 
-> **[ESPACIO PARA CAPTURA 5: Petición `POST` en Postman o Bruno]**  
-> Reemplaza la línea de abajo con tu captura de Postman o Bruno mostrando el método `POST`, la URL, el JSON enviado y la respuesta recibida:
-```markdown
-![Prueba POST en Postman/Bruno](ruta/a/tu/captura_postman.png)
-```
-
----
-
-### 3.6. (Opcional) Despliegue en VPS corriendo en paralelo con la Actividad 1
-- **Puerto Actividad 1 (`OPGFact1_t4`):** `8084`
-- **Puerto Actividad 2 (`OPGFact2_t4`):** `8087`
-
-> **[ESPACIO PARA CAPTURA 6 (Opcional): Proyecto corriendo en el VPS]**  
-> Si deseas agregar evidencia del VPS, coloca aquí tu captura:
-```markdown
-![Instancia corriendo en VPS](ruta/a/tu/captura_vps.png)
-```
-
+![Vista de la petición POST](/OPGFact2_t4/Capturas/POSTMATE.png)
 ---
 
 ## 4. Cuestionario de la Actividad
