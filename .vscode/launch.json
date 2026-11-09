@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-OpgFact2T4Application<OPGFact2_t4>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.ito.OPGFact2_t4.OpgFact2T4Application",
+      "projectName": "OPGFact2_t4",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

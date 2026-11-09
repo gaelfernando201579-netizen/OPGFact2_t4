@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Info del Proyecto</title>
+</head>
+<body>
+    <!-- Thymeleaf inyecta los valores que mandaste desde el Model del controlador -->
+    <h1 th:text="${titulo}"></h1>
+    <h2 th:text="'Instancia en ejecución: ' + ${instancia}"></h2>
+</body>
+</html>
