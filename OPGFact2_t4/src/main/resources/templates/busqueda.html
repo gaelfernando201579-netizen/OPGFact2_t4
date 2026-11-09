@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+    <h2>Resultados de la Búsqueda</h2>
+    
+    <p th:if="${busqueda != null and !busqueda.isEmpty()}">
+        Mostrando resultados para la categoría/término: <strong th:text="${busqueda}"></strong>
+    </p>
+    <p th:if="${busqueda == null or busqueda.isEmpty()}">
+        No ingresaste ningún término de búsqueda.
+    </p>
+    
+    <br>
+    <a th:href="@{/vistas/materias}">Volver a la lista de materias</a>
+</body>
+</html>

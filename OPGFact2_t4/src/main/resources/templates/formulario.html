@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <h2>Agregar Materia</h2>
+    <form th:action="@{/vistas/guardar}" th:object="${materiaDTO}" method="post">
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}" /><br><br>
+        <label>Profesor:</label>
+        <input type="text" th:field="*{profesor}" /><br><br>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class InfoController {
 
-    // Regresa info del proyecto mediante una vista HTML
     @GetMapping("/mi-proyecto")
     public String obtenerInfoProyecto(Model model) {
         model.addAttribute("titulo", "Proyecto de Gael Fernando Ortiz Pérez");
@@ -15,7 +14,6 @@ public class InfoController {
         return "mi-proyecto";
     }
 
-    // Muestra el status del servidor
     @GetMapping("/status")
     public String obtenerStatus(Model model) {
         model.addAttribute("estado", "Galo-Server esta ejecutandose correctamente");

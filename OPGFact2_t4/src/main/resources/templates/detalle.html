@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle de Materia</title>
+</head>
+<body>
+    <h2>Detalle de la Materia</h2>
+    
+    <p>Estás consultando la materia con el ID: <strong th:text="${id}"></strong></p>
+    
+    <br>
+    <a th:href="@{/vistas/materias}">Volver a la lista de materias</a>
+</body>
+</html>

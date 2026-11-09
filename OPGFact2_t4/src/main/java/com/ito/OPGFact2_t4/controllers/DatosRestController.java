@@ -14,7 +14,6 @@ import models.Empleados;
 @RequestMapping("/api")
 public class DatosRestController {
 
-    // Información de una lista retornada como JSON
     @GetMapping("/materias")
     public Map<String, Object> obtenerMaterias() {
         Empleados empleado1 = new Empleados("Juan", "Rodriguez", "Calle 2 No 1", "Programador", 25, 987654321, 001);
